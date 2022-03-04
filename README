@@ -1,0 +1,19 @@
+Ant task for MSBuild.
+
+Original code:  http://labs.teamprise.com/build/extensions.html
+
+
+How to use:
+
+<PropertyGroup>
+  <JavaHome>$(MSBuildProjectDirectory)\build\tools\jdk1.6.0_25</JavaHome>
+  <AntHome>$(MSBuildProjectDirectory)\build\tools\apache-ant-1.8.2</AntHome>
+</PropertyGroup>
+
+<!-- Call Ant with 'jar' target. -->
+<Ant 
+  BuildFile="$(MSBuildProjectDirectory)\YourJavaProject\build.xml"
+  Target="jar"
+  AntHome="$(AntHome)"
+  JavaHome="$(JavaHome)"
+ />
